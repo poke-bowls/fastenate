@@ -66,17 +66,20 @@ p{
 }
 
 .block {
-  flex: 1 100%;
+  display: flex;
+  flex-flow: row nowrap;
 
   &.block-title {
+    flex: 1 100%;
     background-color: white;
     padding-top: 6px;
   }
 
   &.block-intro {
+    flex: 1 100%;
+    justify-content: center;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
 
       @media #{$medium}{
         flex-flow: row wrap;
@@ -91,14 +94,32 @@ p{
       margin-top: 0px;
       min-width: 150px;
       max-height: 45px;
-      justify-content: space-between;
+      justify-content: center;
 
       @media #{$medium}{
-        flex: 0 0 auto;
+        display: flex;
+        flex-flow: row wrap;
+        flex: 1 0 auto;
+        justify-content: center;
       }
 
       @media #{$large}{
-    }
+        flex: 1 0 auto;
+        justify-content: center;
+      }
+
+      a {
+        text-decoration: none;
+        color: #808080;
+      }
+
+      a:hover {
+        color: orange;
+      }
+
+      a:visited {
+        color: none;
+      }
 
     }
   }
@@ -131,10 +152,33 @@ p{
       }
 
       img{
-        max-width: 100%;
+
+        width: 100%;
       }
     }
   }
+
+  &.block-outro {
+    display: none;
+
+    @media #{$medium}{
+      display: flex;
+      flex-flow: row wrap;
+      flex: 1 100%;
+      background-color: #404040 ;
+      min-width: 150px;
+      max-height: 45px;
+      justify-content: center;
+    }
+
+    @media #{$large}{
+      display: flex;
+      flex-flow: row wrap;
+      flex: 1 100%;
+      background-color: #404040 ;
+      min-width: 150px;
+      max-height: 45px;
+      justify-content: center;
+    }
+  }
 }
-
-
