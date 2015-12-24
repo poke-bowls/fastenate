@@ -6,11 +6,16 @@ window.onload = function() {
 
   var loadFeed = function( data ){
     for( var i = 0; i < data.data.children.length; i++ ) {
-      // console.log(data.data.children[i]);
-      var $newDiv = $( "<div id = 'story" + i + "' class = 'feature'/>");
+      // attr(attrName, value)
+      var $newDiv = $( "<div/>");
+        $newDiv.attr( 'id', 'story' + i );
+        $newDiv.attr( 'class', 'feature' );
 
-      var image = '<img src="' + data.data.children[i].data.url + '"</img>';
+      var image = $('<img/>');
+        image.attr( 'src', data.data.children[i].data.url );
+
       var title = '<h1>' + data.data.children[i].data.title + '</h1>';
+
       var author = data.data.children[i].data.author;
       var age = moment(data.data.children[i].data.created, 'X').fromNow();
       var views = data.data.children[i].data.score + ' views';

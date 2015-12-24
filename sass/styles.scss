@@ -39,6 +39,15 @@ body {
 h1 {
   font-weight: 300;
   font-family: helvetica, sans-serif;
+  font-size: 1em;
+
+  @media #{$medium}{
+    font-size: 1.3em;
+  }
+
+  @media #{$large}{
+    font-size: 1.5em;
+  }
 }
 
 h3 {
@@ -46,17 +55,22 @@ h3 {
   font-weight: 500;
   font-family: Times, sans-serif;
   line-height: 10px;
-
-  @media #{$medium} {
-
-  }
 }
 
 p{
   color: $primary;
   font-family: sans-serif;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 0.8em;
+
+  @media #{$medium}{
+    font-size: 1em;
+  }
+
+  @media #{$large} {
+    font-size: 1.2em;
+
+  }
 }
 
 .wrapper {
@@ -68,26 +82,59 @@ p{
 .block {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: center;
 
   &.block-title {
     flex: 1 100%;
     background: white;
     padding-top: 6px;
+    height: 55px;
+
 
     @media #{$medium}{
-      justify-content: center;
-      background-image: inherit;
     }
 
     @media #{$large}{
-        // background: ;
-        justify-content: center;
     }
 
-    .header {
-      background: white;
-    }
+    .flogo {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      background-color: white;
+      flex: 1 100%;
 
+      @media #{$medium}{
+        height: 55px;
+        width: 500px;
+        background-image: url('./../assets/header_bg.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      @media #{$large}{
+        background-repeat: no-repeat;
+      }
+
+      .logo {
+        flex: 0 0 13%;
+        background-image: url('./../assets/logo.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: white;
+        height: 55px;
+        width: 150px;
+
+        @media #{$medium}{
+          background-position: center;
+
+        }
+
+        @media #{$large}{
+          background-repeat: no-repeat;
+        }
+      }
+    }
   }
 
   &.block-intro {
@@ -103,15 +150,15 @@ p{
 
     .navbar {
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: row nowrap;
       flex: 1 100%;
       background-color: #404040 ;
       text-align: center;
       vertical-align: center;
       margin-top: 0px;
-      min-width: 150px;
+      min-width: 125px;
       max-height: 45px;
-      justify-content: space-around;
+      justify-content: center;
 
       @media #{$medium}{
         flex: 1 0 auto;
@@ -135,8 +182,31 @@ p{
       a:visited {
         color: none;
       }
+
+      }
     }
-  }
+
+    .divider {
+      display: none;
+
+      @media #{$medium}{
+        display: flex;
+        flex-flow: row nowrap;
+        background-color: #404040 ;
+        max-height: 45px;
+        justify-content: center;
+        flex: 0 0 1%;
+      }
+
+      @media #{$large}{
+        display: flex;
+        flex-flow: row nowrap;
+        background-color: #404040 ;
+        max-height: 45px;
+        justify-content: center;
+        flex: 0 0 1%;
+      }
+    }
 
   &.block-stories {
     display: flex;
@@ -146,6 +216,7 @@ p{
 
     @media #{$medium}{
       padding: 50px;
+      justify-content: center;
     }
 
     @media #{$large}{
@@ -194,5 +265,22 @@ p{
       max-height: 45px;
       justify-content: center;
     }
+
+    #fblogo {
+      background-color: #404040 ;
+      line-height: 10px;
+    }
+
+    #iglogo {
+      // background-color: #404040 ;
+      line-height: 10px;
+      width: 10px;
+      background-image: './../assets/instagram_grey.svg';
+    }
+
+    #iglogo:hover{
+      background-image: './../assets/instagram_orange.svg';
+    }
+
   }
 }
