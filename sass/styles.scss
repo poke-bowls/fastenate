@@ -90,7 +90,6 @@ p{
     padding-top: 6px;
     height: 55px;
 
-
     @media #{$medium}{
     }
 
@@ -100,7 +99,7 @@ p{
     .flogo {
       display: flex;
       flex-flow: row nowrap;
-      justify-content: center;
+      justify-content: flex-start;
       background-color: white;
       flex: 1 100%;
 
@@ -110,28 +109,34 @@ p{
         background-image: url('./../assets/header_bg.svg');
         background-repeat: no-repeat;
         background-position: center;
+        justify-content: center;
+        transition: all 1s ease;
       }
 
       @media #{$large}{
         background-repeat: no-repeat;
+        transition: all 1s ease;
       }
 
       .logo {
-        flex: 0 0 13%;
+        flex: 0 0 auto;
         background-image: url('./../assets/logo.svg');
         background-repeat: no-repeat;
-        background-position: center;
         background-color: white;
-        height: 55px;
-        width: 150px;
+        background-position: left;
+        width: 135px;
+        transition: all 1s ease;
 
         @media #{$medium}{
+          justify-content: center;
           background-position: center;
-
+          transition: all 1s ease;
         }
 
         @media #{$large}{
           background-repeat: no-repeat;
+          background-position: center;
+          transition: all 1s ease;
         }
       }
     }
@@ -216,12 +221,12 @@ p{
 
     @media #{$medium}{
       padding: 50px;
-      justify-content: center;
+      justify-content: space-around;
     }
 
     @media #{$large}{
       padding: 100px;
-      justify-content: center;
+      justify-content: space-around;
     }
 
     .feature {
@@ -237,7 +242,6 @@ p{
       }
 
       img{
-
         width: 100%;
       }
     }
