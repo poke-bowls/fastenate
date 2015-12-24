@@ -6,7 +6,8 @@ window.onload = function() {
 
   var loadFeed = function( data ){
     for( var i = 0; i < data.data.children.length; i++ ) {
-      var $newDiv = $( "<div id = 'story' + i class = 'feature'/>" );
+      // console.log(data.data.children[i]);
+      var $newDiv = $( "<div id = 'story" + i + "' class = 'feature'/>");
 
       var image = '<img src="' + data.data.children[i].data.url + '"</img>';
       var title = '<h1>' + data.data.children[i].data.title + '</h1>';
@@ -17,7 +18,7 @@ window.onload = function() {
       var description = '<p>' + 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis cursus augue, a consectetur tellus. Sed placerat urna ac orci egestas, eget malesuada ex malesuada...' + '</p>' ;
 
       $( container ).append( $newDiv );
-      $( story[i] ).append( image, title, info, description );
+      $( '#story' + i ).append( image, title, info, description );
     }
   };
 
